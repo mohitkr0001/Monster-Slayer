@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Game Design</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js">
+  </script>
+  <script src="./app.js">
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="container head" id="game">
+    <h1>Kill the monsters</h1>
+    <div class="score row">
+      <div class="col-md-6 player">
+        <h3>Your health</h3>
+        <div class="block" :style="{width:playerHealth +'%'}">
+           <h5>{{ playerHealth }}</h5>
+         </div>
+      </div>
+      <div class="col-md-6 monster">
+        <h3>Monster's health</h3>
+        <div class="block" :style="{width:monsterHealth +'%'}">
+          <h5>{{ monsterHealth }}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="row game-menu-before start" v-if="!isGameStarted">
+      <button class="col-md-6 btn btn-info" @click="startGame">Start Game</button>
+    </div>
+    <div class="row game-menu-after" v-else>
+      <button class="col-md-2 btn btn-primary" @click="onAttack">Attack</button>
+      <button class="col-md-2 btn btn-success"  @click="onSpAttack">Special attack</button>
+      <button class="col-md-2 btn btn-warning"  @click="onHeal">Health</button>
+      <button class="col-md-2 btn btn-danger" @click="onQuit">I Quit</button>
+    </div>
+    <div class="row list-score">
+      <div class="col-md-12">
+        <ul>
+          <li>
+		Will get update
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
